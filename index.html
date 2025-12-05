@@ -3,162 +3,202 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La página de Ximens</title>
+  <title>Mi Tienda de Ropa</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: url('https://image.slidesdocs.com/responsive-images/background/poster-flower-tourism-clothing-e-commerce-antiquity-elegant-cartoon-powerpoint-background_fedfb08aaf__960_540.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
+    /* Reset / básicos */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #fff; color: #333; }
+
+    /* Menú / header */
     header {
-      background: rgba(255, 153, 200, 0.9);
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-    }
-    .categoria {
-      background: rgba(255, 255, 255, 0.8);
-      margin: 15px;
-      padding: 15px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 20px;
-      font-weight: bold;
-      color: #ff4da6;
-      border-left: 5px solid #ff4da6;
-    }
-    /* Catálogo modal */
-    .modal {
-      display: none;
-      position: fixed;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 20px;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(5px);
-      justify-content: center;
-      align-items: center;
+      z-index: 100;
     }
-    .modal-contenido {
-      background: white;
-      width: 90%;
-      max-width: 450px;
-      padding: 20px;
-      border-radius: 15px;
-    }
-    .producto {
+    .nav {
       display: flex;
-      gap: 15px;
-      margin-bottom: 15px;
+      justify-content: space-between;
       align-items: center;
     }
-    .producto img {
-      width: 80px;
-      height: 80px;
-      border-radius: 10px;
+    .nav .brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+    }
+
+    /* Banner */
+    .banner {
+      width: 100%;
+      height: 300px;
+      background: url('https://via.placeholder.com/1200x300') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
+    .banner h1 {
+      font-size: 36px;
+      background: rgba(0,0,0,0.4);
+      padding: 12px 20px;
+      border-radius: 8px;
+    }
+
+    /* Contenedor principal */
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+    /* Grid de productos */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .product-card {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+      width: 100%;
       object-fit: cover;
     }
-    .whatsapp-btn {
-      background: #ff4da6;
-      padding: 8px 12px;
-      border-radius: 20px;
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
+    .product-card .info {
+      padding: 15px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .cerrar {
-      text-align: right;
-      cursor: pointer;
+    .product-card .info h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .product-card .info p {
+      margin-bottom: 12px;
+      color: #555;
+    }
+    .product-card .btn {
+      text-decoration: none;
+      background: #ff5da2;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
       font-weight: bold;
-      color: #ff4da6;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+      color: #777;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <header>Tienda de Ropa</header>
+  <header>
+    <nav class="nav">
+      <div class="brand">MiTienda</div>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#mujer">Mujer</a></li>
+        <li><a href="#hombre">Hombre</a></li>
+        <li><a href="#jeans">Jeans</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Categorías -->
-  <div class="categoria" onclick="abrirCatalogo('oversize')">Camisetas Oversize</div>
-  <div class="categoria" onclick="abrirCatalogo('sudaderas')">Sudaderas</div>
-  <div class="categoria" onclick="abrirCatalogo('chaquetasDama')">Chaquetas de Dama</div>
-  <div class="categoria" onclick="abrirCatalogo('chaquetasHombre')">Chaquetas de Hombre</div>
-  <div class="categoria" onclick="abrirCatalogo('capoteros')">Busos Capoteros</div>
-  <div class="categoria" onclick="abrirCatalogo('chamarras')">Chamarras</div>
-  <div class="categoria" onclick="abrirCatalogo('jeanChaquetas')">Chaquetas en Jean</div>
-  <div class="categoria" onclick="abrirCatalogo('jeans')">Jeans Chancho / Pegado (Dama y Caballero)</div>
-
-  <!-- Modal Catálogos -->
-  <div id="modal" class="modal">
-    <div class="modal-contenido">
-      <div class="cerrar" onclick="cerrarCatalogo()">Cerrar ✖</div>
-      <h2 id="tituloCatalogo" style="color:#ff4da6"></h2>
-      <div id="listaProductos"></div>
-    </div>
+  <div class="banner">
+    <h1>Bienvenida a MiTienda — Ropa con estilo 💖</h1>
   </div>
 
-  <script>
-    const productos = {
-      oversize: [
-        { nombre: "Oversize Blanca", img: "https://via.placeholder.com/150" },
-        { nombre: "Oversize Negra", img: "https://via.placeholder.com/150" }
-      ],
-      sudaderas: [
-        { nombre: "Sudadera Rosada", img: "https://via.placeholder.com/150" },
-        { nombre: "Sudadera Negra", img: "https://via.placeholder.com/150" }
-      ],
-      chaquetasDama: [
-        { nombre: "Chaqueta Cuerina", img: "https://via.placeholder.com/150" },
-        { nombre: "Beisbolera Dama", img: "https://via.placeholder.com/150" }
-      ],
-      chaquetasHombre: [
-        { nombre: "Rompe Viento Hombre", img: "https://via.placeholder.com/150" },
-        { nombre: "Beisbolera Hombre", img: "https://via.placeholder.com/150" }
-      ],
-      capoteros: [
-        { nombre: "Capotero Negro", img: "https://via.placeholder.com/150" },
-        { nombre: "Capotero Gris", img: "https://via.placeholder.com/150" }
-      ],
-      chamarras: [
-        { nombre: "Chamarra Roja", img: "https://via.placeholder.com/150" }
-      ],
-      jeanChaquetas: [
-        { nombre: "Chaqueta Jean Clásica", img: "https://via.placeholder.com/150" }
-      ],
-      jeans: [
-        { nombre: "Jean Chancho Dama", img: "https://via.placeholder.com/150" },
-        { nombre: "Jean Pegado Caballero", img: "https://via.placeholder.com/150" }
-      ]
-    };
-
-    function abrirCatalogo(categoria) {
-      document.getElementById("modal").style.display = "flex";
-      document.getElementById("tituloCatalogo").innerText = categoria.toUpperCase();
-
-      const cont = document.getElementById("listaProductos");
-      cont.innerHTML = "";
-
-      productos[categoria].forEach(p => {
-        cont.innerHTML += `
-          <div class="producto">
-            <img src="${p.img}" />
-            <div>
-              <p>${p.nombre}</p>
-              <a class="whatsapp-btn" href="https://wa.me/573000000000?text=Hola!%20Quiero%20información%20sobre%20${encodeURIComponent(p.nombre)}">Comprar</a>
-            </div>
+  <div class="container">
+    <!-- Sección Mujer -->
+    <section id="mujer">
+      <h2>Ropa Mujer</h2>
+      <div class="product-grid">
+        <!-- Producto 1 -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/400x500" alt="Camiseta Oversize">
+          <div class="info">
+            <h3>Camiseta Oversize</h3>
+            <p>Comodidad y estilo para tu día a día.</p>
+            <a class="btn" href="https://wa.me/573000000000?text=Hola! Quiero la Camiseta Oversize">Comprar / Consultar</a>
           </div>
-        `;
-      });
-    }
+        </div>
+        <!-- Producto 2 -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/400x500" alt="Sudadera Rosada">
+          <div class="info">
+            <h3>Sudadera Rosada</h3>
+            <p>Súper cómoda y abrigadora.</p>
+            <a class="btn" href="https://wa.me/573000000000?text=Hola! Quiero la Sudadera Rosada">Comprar / Consultar</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    function cerrarCatalogo() {
-      document.getElementById("modal").style.display = "none";
-    }
-  </script>
+    <!-- Sección Hombre -->
+    <section id="hombre" style="margin-top: 40px;">
+      <h2>Ropa Hombre</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/400x500" alt="Chamarra Hombre">
+          <div class="info">
+            <h3>Chaqueta Hombre</h3>
+            <p>Perfecta para salir a la calle.</p>
+            <a class="btn" href="https://wa.me/573000000000?text=Hola! Quiero la Chaqueta Hombre">Comprar / Consultar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Jeans -->
+    <section id="jeans" style="margin-top: 40px;">
+      <h2>Jeans</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/400x500" alt="Jean Pegado">
+          <div class="info">
+            <h3>Jean Pegado</h3>
+            <p>Estilo ajustado, ideal para outfits urbanos.</p>
+            <a class="btn" href="https://wa.me/573000000000?text=Hola! Quiero el Jean Pegado">Comprar / Consultar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer id="contacto">
+    © 2025 MiTienda — Contacto por WhatsApp
+  </footer>
 
 </body>
 </html>
