@@ -2,151 +2,194 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <title>X-Glow | Brillando con autenticidad y eXtilo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ximena Fashion Store</title>
+
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
-    body { background: #fff; color: #333; }
-
-    /* HEADER + MENÚ */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 40px;
-      border-bottom: 1px solid #eee;
-    }
-    header .logo img {
-      height: 60px;
-      object-fit: contain;
-    }
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #ff4d9e;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #e0308c;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    /* BANNER / PORTADA */
-    .banner {
-      width: 100%;
-      height: 400px;
-      background: url('https://i.pinimg.com/736x/36/a1/de/36a1de4d46b7162b7dacf964151d7869.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .banner h1 {
-      background: rgba(255,255,255,0.8);
-      padding: 15px 25px;
-      border-radius: 10px;
-      color: #ff4d9e;
-      font-size: 36px;
+    body{
+      background:#ffffff;
+      color:#333;
     }
 
-    /* CATÁLOGO DE PRODUCTOS */
-    .productos {
-      padding: 40px;
+    /* HEADER */
+    header{
+      background:#fff;
+      border-bottom:1px solid #f2b6d3;
+      padding:15px 40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
     }
-    .productos .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
+
+    header img{
+      height:60px;
     }
-    .card {
-      border: 1px solid #eee;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform .2s, box-shadow .2s;
-      background: #fff;
+
+    nav a{
+      margin-left:25px;
+      text-decoration:none;
+      color:#ff4da6;
+      font-weight:600;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+    nav a:hover{
+      text-decoration:underline;
     }
-    .card img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
+
+    /* BANNER */
+    .banner{
+      background-image:url('https://i.pinimg.com/736x/36/a1/de/36a1de4d46b7162b7dacf964151d7869.jpg');
+      background-size:cover;
+      background-position:center;
+      height:60vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
     }
-    .card .info {
-      padding: 15px;
-      text-align: center;
+
+    .banner h1{
+      background:rgba(255,255,255,0.85);
+      padding:25px 40px;
+      border-radius:15px;
+      color:#ff4da6;
+      font-size:42px;
     }
-    .card .info h3 {
-      color: #ff4d9e;
-      margin-bottom: 10px;
+
+    .banner h1 span{
+      display:block;
+      margin-top:12px;
+      font-size:18px;
+      color:#555;
+      font-weight:400;
+      letter-spacing:1px;
     }
-    .card .info p {
-      color: #666;
-      margin-bottom: 15px;
+
+    /* SECCIONES */
+    section{
+      padding:60px 40px;
+      text-align:center;
     }
-    .card .info a {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #ff4d9e;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
+
+    section h2{
+      color:#ff4da6;
+      margin-bottom:40px;
+      font-size:32px;
     }
-    .card .info a:hover {
-      background: #e0308c;
+
+    /* CATEGORÍAS */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:25px;
+    }
+
+    .card{
+      border:1px solid #f2b6d3;
+      border-radius:15px;
+      padding:30px 20px;
+      cursor:pointer;
+      transition:all 0.3s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .card h3{
+      color:#ff4da6;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      font-size:14px;
+      color:#666;
     }
 
     /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f8f8f8;
-      margin-top: 40px;
-      color: #777;
+    footer{
+      background:#ffe6f1;
+      padding:25px;
+      text-align:center;
+      color:#555;
+      margin-top:40px;
+    }
+
+    /* WHATSAPP */
+    .whatsapp{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:white;
+      padding:15px 20px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:bold;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Ximena Logo">
-    </div>
+    <img src="Ximena Minimalist Professional  Logo.svg" alt="X-Glow">
     <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Mujer</a>
-      <a href="#">Hombre</a>
+      <a href="#">Novedades</a>
+      <a href="#">Camisetas</a>
+      <a href="#">Sudaderas</a>
+      <a href="#">Chaquetas</a>
+      <a href="#">Jeans</a>
       <a href="#">Ofertas</a>
-      <a href="#">Contacto</a>
     </nav>
   </header>
 
   <div class="banner">
-    <h1>X-Glow
-      Brillando con atenticidad
+    <h1>
+      X-Glow
+      <span>Brillando con autenticidad y eXtilo</span>
     </h1>
   </div>
 
-  <section class="productos">
-    <h2 style="text-align:center; margin-bottom:30px; color:#ff4d9e;">Productos Destacados</h2>
+  <section>
+    <h2>Categorías</h2>
     <div class="grid">
-      <!-- Ejemplo de producto -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x400" alt="Producto 1">
-        <div class="info">
-          <h3>Jeans Pegado</h3>
-          <p>$79.900</p>
-          <a href="https://wa.me/573000000000?text=Hola!%20Quiero%20el%20Jeans%20Pegado">Consultar</a>
-        </div>
+
+      <div class="card" onclick="window.location.href='https://wa.me/573000000000?text=Quiero%20ver%20camisetas%20oversize'">
+        <h3>Camisetas Oversize</h3>
+        <p>Estilo urbano y cómodo</p>
       </div>
-      <!-- Añade más productos igual -->
+
+      <div class="card" onclick="window.location.href='https://wa.me/573000000000?text=Quiero%20ver%20sudaderas'">
+        <h3>Sudaderas</h3>
+        <p>Ideal para cualquier ocasión</p>
+      </div>
+
+      <div class="card" onclick="window.location.href='https://wa.me/573000000000?text=Quiero%20ver%20chaquetas'">
+        <h3>Chaquetas</h3>
+        <p>Cuerina, jean, impermeables</p>
+      </div>
+
+      <div class="card" onclick="window.location.href='https://wa.me/573000000000?text=Quiero%20ver%20jeans'">
+        <h3>Jeans</h3>
+        <p>Dama y caballero</p>
+      </div>
+
     </div>
   </section>
 
   <footer>
-    &copy; 2025 Ximena Fashion Store
+    © 2025 X-Glow · Moda femenina y urbana
   </footer>
+
+  <a class="whatsapp" href="https://wa.me/573000000000" target="_blank">WhatsApp</a>
 
 </body>
 </html>
