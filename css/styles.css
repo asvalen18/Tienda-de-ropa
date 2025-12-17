@@ -24,9 +24,16 @@
 }
 
 .logo-container img {
-  height: 48px; /* ajusta según necesites */
+  height: 64px; /* aumentado desde 48px */
   width: auto;
   display: block;
+}
+
+/* Responsive: reducir logo en pantallas pequeñas */
+@media (max-width: 700px) {
+  .logo-container img {
+    height: 48px;
+  }
 }
 
 .nav {
@@ -37,9 +44,18 @@
 
 .nav a {
   text-decoration: none;
-  color: inherit;
-  padding: 6px 8px;
-  font-weight: 500;
+  color: #333;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+/* Opcional: efecto hover */
+.nav a:hover {
+  color: #ff4da6;
 }
 
 /* Responsive: en pantallas pequeñas apilar o compactar */
