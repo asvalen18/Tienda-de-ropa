@@ -6,9 +6,9 @@
   <title>X-Glow | Brillando con autenticidad y eXtilo</title>
 
   <!-- Google Fonts -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -17,7 +17,7 @@
   <!-- HEADER -->
   <header class="header">
     <div class="logo-container">
-      <img src="img/logo.svg" alt="X-Glow logo">
+      <a href="index.html"><img src="img/logo.svg" alt="X-Glow logo"></a>
     </div>
 
     <!-- Botón hamburguesa (visible en móvil) -->
@@ -28,42 +28,42 @@
     </button>
 
     <nav id="main-nav" class="nav" role="navigation">
-      <a href="#">Novedades</a>
-      <a href="#">Camisetas</a>
-      <a href="#">Sudaderas</a>
-      <a href="#">Chaquetas</a>
-      <a href="#">Jeans</a>
-      <a href="#">Ofertas</a>
+      <a href="index.html">Novedades</a>
+      <a href="camisetas.html">Camisetas</a>
+      <a href="sudaderas.html">Sudaderas</a>
+      <a href="chaquetas.html">Chaquetas</a>
+      <a href="jeans.html">Jeans</a>
+      <a href="index.html#ofertas">Ofertas</a>
     </nav>
   </header>
 
   <!-- BANNER -->
-  <section class="banner">
+  <section id="inicio" class="banner">
     <div class="banner-text">
       <h1>X-Glow</h1>
       <p>Brillando con autenticidad y eXtilo</p>
     </div>
   </section>
 
-  <!-- PRODUCTOS -->
-  <section class="seccion">
+  <!-- PRODUCTOS GENERALES (sección principal) -->
+  <section id="productos" class="seccion">
     <h2>Productos Destacados</h2>
 
     <div class="productos">
       <div class="producto">
-        <img src="img/chaqueta.jpg" alt="Producto">
+        <img src="img/img-ropa/chaqueta.jpg" alt="Chaqueta oversize negra">
         <h3>Chaqueta Oversize</h3>
         <span>$89.900</span>
       </div>
 
       <div class="producto">
-        <img src="img/jeans.jpg" alt="Producto">
+        <img src="img/img-ropa/jeans.jpg" alt="Jean skinny azul">
         <h3>Jean Skinny</h3>
         <span>$79.900</span>
       </div>
 
       <div class="producto">
-        <img src="img/sudadera.jpg" alt="Producto">
+        <img src="img/img-ropa/sudadera.jpg" alt="Sudadera premium gris">
         <h3>Sudadera Premium</h3>
         <span>$99.900</span>
       </div>
@@ -71,7 +71,7 @@
   </section>
 
   <!-- WHATSAPP -->
-  <a class="whatsapp" href="https://api.whatsapp.com/send?phone=+573238149197&text=Hola.%20Quisiera%20recibir%20informaci%C3%B3n%20sobre%20esta%20prenda:%20Tallas%20disponibles,%20precio%20y%20forma%20de%20env%C3%ADo." target="_blank">💬</a>
+  <a class="whatsapp" href="https://api.whatsapp.com/send?phone=+573238149197&text=Hola.%20Quisiera%20recibir%20informaci%C3%B3n%20sobre%20esta%20prenda:%20Tallas%20disponibles,%20precio%20y%20forma%20de%20env%C3%ADo." target="_blank" rel="noopener noreferrer">💬</a>
 
   <script src="js/main.js"></script>
 </body>

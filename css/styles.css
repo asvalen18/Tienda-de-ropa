@@ -6,6 +6,11 @@
   font-family: 'Cinzel Decorative', sans-serif;
 }
 
+/* Hacer scroll suave para anclas internas */
+html {
+  scroll-behavior: smooth;
+}
+
 /* HEADER */
 .header {
   background: #ffdbedd7;
@@ -16,6 +21,9 @@
   padding: 16px 24px;
   gap: 16px;
   box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo-container {
@@ -268,4 +276,10 @@
   padding: 14px 16px;
   border-radius: 50%;
   text-decoration: none;
+}
+
+/* Evitar que el header tape el contenido anclado */
+.banner,
+.seccion {
+  scroll-margin-top: 90px; /* ajustar según altura real del header */
 }
